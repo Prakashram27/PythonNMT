@@ -1,0 +1,32 @@
+<body class="body">
+    <div id="particles-js"></div>
+    <main class="form-signin">
+    <form accept-charset="UTF-8" action="/authorize.html" data-bs-toggle="validator" id="form_add_user" method="POST" onsubmit="return makeUsernameLowercase();" role="form">
+    <input class="form-control" name="user" type="hidden"/>
+    <input class="form-control" name="referer" type="hidden" value="192.168.0.104:3000/lua/hosts_stats.lua"/>
+    <h1 class="h3 mb-3 fw-normal">Welcome to ntopng</h1>
+    <div class="form-group mb-3 has-feedback mb-3">
+    <div class="form-floating">
+    <input class="form-control" id="input-username" name="_username" placeholder="admin" required="" type="text"/>
+    <label for="input-username">Username (default admin)      </label></div>
+    <div class="form-floating">
+    <input class="form-control" id="input-password" name="password" pattern="^[\w\$\\!\/\(\)= \?\^\*@_\-\u0000-\u0019\u0021-\u00ff]{5,31}$" placeholder="admin" required="" type="password"/>
+    <label for="input-password">Password (default admin)      </label></div>
+    </div> <!-- Close .form-group mb-3 -->
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    <div class="row">
+    <div> </div>
+    <div class="col-lg-12"><small><center> <i class="fas fa-lock"></i> <a href="https://www.ntop.org/guides/ntopng/faq.html#cannot-login-into-the-gui" target="_blank">Unable to login?</a> </center></small></div>
+    <div> </div>
+    <div class="col-lg-12">
+    <small>
+    <p><a href="https://www.ntop.org/support/documentation/documentation/" target="_blank">User's Guides</a> | <a href="https://www.ntop.org/community/" target="_blank">Community</a> | <a href="https://www.ntop.org/support/need-help-2/commercial-support/" target="_blank">Support</a> | <a href="https://www.ntop.org/support/documentation/faq/" target="_blank">FAQ</a> | <a href="https://github.com/ntop" target="_blank">Code</a> | <a href="https://www.ntop.org/support/need-help-2/contact-us/" target="_blank">Contact Us</a> </p>
+    <p class="text-muted">© 1998-23 - ntop<br/> ntopng is released under <a href="http://www.gnu.org/copyleft/gpl.html">GPLv3</a>.</p>
+    </small><div id="unsupported-browser" style="display:none">
+    <b>Note</b>: <small>Your browser is not supported.<br/>Please consider using a recent Firefox or Chrome.</small>
+    </div>
+    </div>
+    </div>
+    </form>
+    </main>
+    </body>
