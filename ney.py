@@ -62,3 +62,31 @@ total_bandwidth = sum(bandwidth_usage.values())
 print("Top Bandwidth User:", top_bandwidth_user)
 print("Top Remote Host:", top_remote_host)
 print("Total Bandwidth Usage:", total_bandwidth)
+
+
+
+
+
+
+
+
+
+# pandas
+
+import pandas
+import glob
+
+file_path = '*.xlsx'
+data = []
+
+for file in glob.glob(file_path):
+    xls = pd.ExcelFile(file)
+    for sheet_name in xls.sheet_names:
+        df = pd.read_excel(file, sheet_name=sheet_name, usecols=[0])
+        data.append(df)
+merged_data = pd.concat(data, axis=0)
+total = merged_data.sum()
+
+output_file = 'output.xlsx'
+with pd.ExcelWriter(output_file) as writer:
+    total.to_excel(writer, sheet_name='Total', index=False)

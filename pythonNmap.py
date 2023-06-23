@@ -11,19 +11,13 @@ start_time = time.time()
 def get_network_hosts():
     nm = nmap.PortScanner()
     nm.scan(hosts='192.168.0.0/23', arguments='-sn')
-
     hosts = []
     for host in nm.all_hosts():
         if nm[host].state() == 'up':
             hosts.append(host)
-    
-    print(hosts)
-    
+    pprint(hosts)
+    print(len(hosts))
     return hosts
-
-
-
-
 
 get_network_hosts()
 end_time = time.time()

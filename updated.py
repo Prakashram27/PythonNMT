@@ -6,6 +6,13 @@ from pprint import pprint
 
 start_time = time.time()
 
+# def get_interface():
+#     command = "ip addr show | grep 'state UP' -A2 | awk -F: '{print $2}' | sed 's/^[[:space:]]*//'"
+#     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#     output, error = process.communicate()
+#     interfaces = output.decode("utf-8").splitlines()
+#     return interfaces
+
 #getting own network hosts
 def get_network_hosts():
     nm = nmap.PortScanner()
@@ -16,14 +23,14 @@ def get_network_hosts():
             hosts.append(host)
     return hosts
 
+interface = ('wlp2s0',)
 if __name__ == "__main__":
-    # Get the network hosts
     test_start = time.time()
     network_hosts = get_network_hosts()
     test_end = time.time()
     print(test_end-test_start)
     
-    command = "sudo tshark -a duration:10 -i wlp2s0 -T fields -e ip.src -e ip.dst -e ip.len"
+    command = f"sudo tshark -a duration:10 -i {interface} -T fields -e ip.src -e ip.dst -e ip.len"
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output, error = process.communicate()
 
