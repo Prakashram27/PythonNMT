@@ -25,14 +25,8 @@ def run_arp_scan():
         if line.strip().startswith("192.168."):  # Modify the condition based on your IP address range
             ip_address = line.split()[0]
             ip_addresses.append(ip_address)
-    print(ip_addresses)
-    print(len(ip_addresses))
-    set_values = set(ip_addresses)
-    print(set_values)
-    print(len(set_values))
-    return ip_addresses
 
-start_time = time.time()  # start time 
+
 if __name__ == "__main__":
     discovered_ips = run_arp_scan()
     

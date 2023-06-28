@@ -1,6 +1,6 @@
 import subprocess
 import time
-import pprint
+from pprint import pprint
 
 def get_network_hosts():
     command = "nmap -sn --open --unprivileged 192.168.0.0/23 | grep 'Nmap scan report' | awk '{print $NF}'"
